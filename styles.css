@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Logo */
+.logo-text {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #c55b5b;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #c0392b; /* hotel accent color */
+}
+
+/* Right Section */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #333;
+}
+
+/* 1. Layout & Centering */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers items horizontally */
+    justify-content: center;
+    text-align: center;     /* Centers the text lines */
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;         /* Centers the container itself */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. Top Tagline (Grey & Spaced) */
+.hero-tagline {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #c55b5b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* 3. Main Headline (Large & Bold) */
+.hero-title {
+    font-size: 72px;        /* Large impactful size */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1d1d1f;
+    margin: 0 0 24px 0;
+}
+
+/* 4. Subtitle (Readable & Soft) */
+.hero-subtitle {
+    font-size: 24px;
+    color: #515154;
+    max-width: 750px;       /* Keeps text from stretching too wide */
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* 5. Buttons Container */
+.hero-actions {
+    display: flex;
+    gap: 30px;              /* Space between buttons */
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* 6. Primary Button (The "Black Pill") */
+.primary-btn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 50px;    /* Makes it a pill shape */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* 7. Secondary Button (Text Link) */
+.secondary-btn {
+    color: #06c;             /* Classic UI blue link color */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.secondary-btn:hover {
+    text-decoration: underline;
+}
+
+/* 8. Hero Image Styling - Adjusted for size */
+.hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px; /* Space at the bottom of the page */
+}
+
+.hero-image img {
+    width: 100%;            /* Keeps it from touching the edges */
+    max-width: 900px;      /* Matches the MAG screenshot width */
+    height: 570px;         /* ADJUST THIS: Fixed height to keep it "short" */
+    object-fit: cover;     /* Crops the image slightly to fit the height without stretching */
+    object-position: top;  /* Ensures the top of the image (the most important part) is visible */
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Animation Class (Optional) */
+.animate {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.about-section {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-tagline {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #c55b5b;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.about-subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+/* CAROUSEL LOGIC */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 10%; /* Center the first card */
+    scrollbar-width: none; /* Hide scrollbar for Chrome/Safari/Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    flex: 0 0 70%; /* Size of the center card */
+    scroll-snap-align: center;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: transform 0.5s ease;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 400px; /* Shortened height as requested */
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 30px;
+    text-align: center;
+}
+
+.card-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+}
+
+.card-info p {
+    color: #888;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Pagination Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.details-section {
+    padding: 60px 10%;
+    background-color: #ffffff;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 80px; /* Space between the rows */
+}
+
+/* This class flips the order for the Restaurant section */
+.detail-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0066cc;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.detail-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1d1d1f;
+}
+
+.detail-description {
+    font-size: 18px;
+    color: #515154;
+    line-height: 1.6;
+}
+
+.detail-media {
+    flex: 1.2; /* Media takes slightly more space than text */
+}
+
+.media-element {
+    width: 100%;
+    height: 350px; /* Keeping it "short" as requested */
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    display: block;
+}
+
+/* Mobile Responsiveness: Stack them vertically on small screens */
+@media (max-width: 768px) {
+    .detail-row, .detail-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .media-element {
+        height: 250px;
+    }
+}
+
+/* Menu Download Section */
+.menu-download-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f7;
+    border-top: 1px solid #e1e1e1;
+}
+
+.menu-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #000;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Dark Footer Styling */
+.contact-footer {
+    background-color: #111111; /* Dark Background */
+    color: #ffffff; /* White Text */
+    padding: 80px 10% 30px 10%;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #999;
+    line-height: 1.6;
+}
+
+.footer-details {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.contact-item h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555; /* Dimmer label */
+    margin-bottom: 15px;
+}
+
+.contact-item p, .contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.8;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: #0066cc;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
