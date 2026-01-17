@@ -1,8 +1,8 @@
 # Hotel Dawat - Luxury Hospitality Website
-A premium, responsive static frontend website built for a luxury hotel in Ladwa, Haryana.
+A premium, responsive static frontend website built for a hotel in Kurukshetra district of Haryana.
 
 ## 🚀 Live Demo
-(https://hoteldawat-ladwa.netlify.app/)
+https://hoteldawat-ladwa.netlify.app/
 
 ## 🛠️ Tech Stack
 - **HTML5/CSS3**: Custom layouts using Flexbox and Grid.
